@@ -692,7 +692,7 @@ export default {
 </template>
 ```
 - make the alert message dynamic by passing data
-in the template alert label
+in the template alert label. ** :message **
 ```<alert :message="message"></alert> ```
 - add the message to the data options in Books.vue:
 ```
