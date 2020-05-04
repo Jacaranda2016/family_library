@@ -726,7 +726,7 @@ addBook(payload) {
   ```
  - add a v-if so the alert is only displayed if showMessage is true
  in template alert label:
- ```<alert message = "message" v-if="showMessage"></alert>```
+ ```<alert :message = "message" v-if="showMessage"></alert>```
  - add showMessage to the data
  ```
  export default {
@@ -760,5 +760,27 @@ addBook(payload) {
         });
     },
   ```
+## PUT ROUTE For Update Book
+### Server
+### Client
+- Wire up AJAX request and add alert message
+```
+updateBook(payload, bookID) {
+  const path = `http://localhost:5000/books/${bookID}`;
+  axios.put(path, payload)
+    .then(() => {
+      this.getBooks();
+      this.message = 'Book updated!';
+      this.showMessage = true;
+    })
+    .catch((error) => {
+      // eslint-disable-next-line
+      console.error(error);
+      this.getBooks();
+    });
+},
+```
+## DELETE Route for deleting Books
+### Server
 
 
